@@ -13,7 +13,7 @@ let map = L.map('mapid').setView([40.7, -94.5], 4);
     zoom: 4
   }); */
 
-
+// A. USE THE MAPBOX STYLES API
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -23,6 +23,34 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+/* To change the map style, use the style given in the URLs
+
+mapbox://styles/mapbox/streets-v12
+mapbox://styles/mapbox/outdoors-v12
+mapbox://styles/mapbox/light-v11
+mapbox://styles/mapbox/dark-v11
+mapbox://styles/mapbox/satellite-v9
+mapbox://styles/mapbox/satellite-streets-v12
+mapbox://styles/mapbox/navigation-day-v1
+mapbox://styles/mapbox/navigation-night-v1 */
+
+// OR ALTERNATIVELY
+
+// B. USE THE LEAFLET DOCUMENTAION
+// We create the tile layer that will be the background of our map.
+/*let streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: API_KEY
+});
+
+// Then we add our 'graymap' tile layer to the map.
+streets.addTo(map);
+*/
 
 /* To change the map's style, change the map id using the list of Mapbox ids below:
 
